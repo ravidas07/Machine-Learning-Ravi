@@ -1,13 +1,15 @@
 @echo off
 
-echo Creating python virtual environment
-python -m venv venv
+REM Activate the virtual environment
+echo activating virtual environment
+call venv\Scripts\activate.bat
 
-echo Activate venv
-call venv\Scripts\activate
+REM Upgrade pip
+echo upgrading pip
+python.exe -m pip install --upgrade pip
 
-echo upgrade pip
-python -m pip install --upgrade pip
-
-echo install requirements.txt
+REM Install any required packages using pip
+echo installing requirements
 pip install -r requirements.txt
+
+
